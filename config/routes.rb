@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  root :to => "home#index"
+
+  resources :home, only: [] do
+    get :index
+    get :welcome
+    get :search
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => '你没有权限访问该页面'
   end
+  private
+  def bit_enable?
+    ENV['BIT'].to_i == 1
+  end
+
+  helper_method :bit_enable?
 end
