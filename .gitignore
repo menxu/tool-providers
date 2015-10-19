@@ -21,3 +21,5 @@
 
 #various artifacts
 /config/database.yml
+/config/application.yml
+/config/service.yml

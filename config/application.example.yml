@@ -1,0 +1,21 @@
+MAIL_USERNAME: ''
+MAIL_PASSWORD: ''
+DOMAIN_NAME: ''
+ADMIN_NAME: admin
+ADMIN_EMAIL: admin@tool-providers.cn
+ADMIN_PASSWORD: admin
+ROLES: [admin, investor, leader]
+
+# GOOGLE ANYLITCS
+GA_ID: ''
+GA_URL: ''
+
+# set system locale en or zh-CN, default is zh-CN
+LOCALE: zh-CN
+
+# SECRET_KEY_BASE
+SECRET_KEY_BASE: ''
+# sidekiq namespace
+SIDEKIQ_NAMESPACE: tool-providers
+# built-in test enable 1 / disable 0
+BIT: 0

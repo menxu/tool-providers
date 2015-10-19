@@ -27,6 +27,19 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.smtp_settings = {
+    address: ENV["MAIL_ADDRESS"] || "smtp.mailgun.org",
+    port: ENV["MAIL_PORT"] || 587,
+    domain: ENV["DOMAIN_NAME"],
+    authentication: ENV["MAIL_AUTH"] || "plain",
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
+  }
+  # Send email in development mode.
+  config.action_mailer.perform_deliveries = true
+
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
@@ -38,4 +51,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  SERVICES = YAML.load_file(Rails.root.join("config", "service.yml")).fetch(Rails.env)
+  Weibo2::Config.api_key = SERVICES['weibo']['api_key']
+  Weibo2::Config.api_secret = SERVICES['weibo']['api_secret']
+  Weibo2::Config.redirect_uri = SERVICES['weibo']['redirect_uri']
+
+  config.middleware.use Rack::LiveReload, host: 'localhost', port: 33333
 end
