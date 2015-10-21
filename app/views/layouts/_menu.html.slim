@@ -1,0 +1,13 @@
+li
+  = link_to t('menu.projects')
+
+- if current_user.present?
+  li
+    = linkto_to t('menu.activities')
+li
+  = link_to t('menu.investors')
+li
+  = link_to t('menu.jobs')
+
+li.has-form
+  = render 'layouts/search_input'
