@@ -1,4 +1,3 @@
-#= require angular-file-upload-shim
 #= require angular
 #= require angular-locale_zh-cn
 #= require angular-cookie
@@ -6,17 +5,13 @@
 #= require angular-route
 #= require angular-sanitize
 #= require angular-file-upload
+#= require angular-file-upload-shim
 #= require mm-foundation-tpls-0.2.0
 #= require_self
 #= require angular-translation
 #= require_tree ./angularjs
-console.log('init angularjs.js.coffee');
 
-@app = angular.module('app', ['ngSanitize', 'ngRoute', 'angularFileUpload', 'mm.foundation', 'ipCookie', 'pascalprecht.translate'])
-
-
-console.log('start angularjs.js.coffee');
-
+@app = angular.module('app', ['ngSanitize', 'ngRoute', 'mm.foundation', 'ipCookie', 'pascalprecht.translate'])
 
 @app.config ["$httpProvider", '$routeProvider', ($httpProvider, $routeProvider) ->
     # 配置 json 与 csrf

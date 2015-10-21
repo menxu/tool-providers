@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 
   root :to => "home#index"
 
-  resources :home, only: [] do
-    get :index
-    get :welcome
-    get :search
+  resources :home do
+    collection do
+      get :index
+      get :welcome
+      get :search
+    end
   end
   
   require 'sidekiq/web'

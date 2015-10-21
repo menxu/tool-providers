@@ -23,7 +23,6 @@
         'user[name]': $scope.name
         'user[email]': $scope.email
         'user[password]': $scope.password
-        'user[abc]': "123456"
         'code': $scope.code
     .success (res)->
       if res.success

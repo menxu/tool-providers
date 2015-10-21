@@ -1,0 +1,3 @@
+= link_to messages_path, class: 'messagebox',  'ng-controller' => 'MessageController', 'ng-class' => '{ unread: !is_empty() }' do
+  i.fa.fa-bell
+  span ng-bind='message_count()' 0
