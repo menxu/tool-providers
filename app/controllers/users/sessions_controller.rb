@@ -3,11 +3,13 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   # def new
+  #   Rails.logger.info "#{Time.now}=new=>#{params}"
   #   super
   # end
 
   # POST /resource/sign_in
   # def create
+  #   Rails.logger.info "#{Time.now}=create=>#{params}"
   #   super
   # end
 

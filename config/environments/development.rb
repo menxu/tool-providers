@@ -27,16 +27,29 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-  config.action_mailer.smtp_settings = {
-    address: ENV["MAIL_ADDRESS"] || "smtp.mailgun.org",
-    port: ENV["MAIL_PORT"] || 587,
-    domain: ENV["DOMAIN_NAME"],
-    authentication: ENV["MAIL_AUTH"] || "plain",
-    user_name: ENV["MAIL_USERNAME"],
-    password: ENV["MAIL_PASSWORD"]
+  # ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => '127.0.0.1:3000' }
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = {  
+    :address => "smtp.163.com",
+    :port => 25,
+    :domain => "163.com",
+    :authentication => :login,
+    :user_name => "mxbeijingmi@163.com",
+    :password => "menxu0725"
   }
+  # config.action_mailer.smtp_settings = {
+  #   address: ENV["MAIL_ADDRESS"] || "smtp.163.com",
+  #   port: ENV["MAIL_PORT"] || 25,
+  #   domain: ENV["DOMAIN_NAME"],
+  #   authentication: ENV["MAIL_AUTH"] || :login,
+  #   user_name: ENV["MAIL_USERNAME"],
+  #   password: ENV["MAIL_PASSWORD"]
+  # }
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :invitable, :async, :confirmable,
+         :invitable, :confirmable, #:async, 
          :omniauthable, omniauth_providers: [:weibo]
 
   has_many :authentications

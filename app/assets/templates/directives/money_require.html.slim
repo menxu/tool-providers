@@ -1,0 +1,54 @@
+.invest.ng-cloak
+  h5.title 
+    | {{ title }} {{ require.format_start_end_time }}
+  p.no-invest-content ng-hide='require'
+    | 当前暂无融资需求, 请关注
+  .content
+    ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4 ng-show='require'
+      li
+        .box
+          .sub-title
+            | 融资规模
+          h5.sub-content 
+            | {{ require.money | nfcurrency }}
+      li
+        .box
+          .sub-title
+            | 出让股份
+          h5.sub-content
+            | {{ require.share }} %
+      li
+        .box.box2
+          .sub-title
+            | 领投人
+          h5.sub-content ng-show='require.leader'
+            | {{ require.leader.name }} 领投
+          h5.sub-content ng-hide='require.leader'
+            | 空缺中
+      li
+        .box.box2
+          .sub-title
+            | 融资状态
+          h5.sub-content
+            | {{ require.format_status }}
+    .progress-wrapper
+      ul.small-block-grid-1.medium-block-grid-2
+        li
+          .progress
+            span.meter ng-style="{'width': require.syndicate_progress * 100 + '%'}"
+            /*span.meter ng-style="{'width': '0%'}"*/
+          .progress-name-wrapper
+            span.type
+              | 融资进度
+            span.progress-name
+              | {{ require.syndicate_progress * 100 + '%' }}
+        li
+          .progress.secondary
+            span.meter ng-style="{'width': require.time_progress * 100 + '%'}"
+          .progress-name-wrapper
+            span.type
+              | 剩余天数
+            span.progress-name.secondary
+              | {{ require.left }}
+              | /
+              | {{ require.deadline }}天

@@ -1,0 +1,40 @@
+.row.select-industry-modal
+  a.close-reveal-modal ng-click="cancel()" ×
+  .small-12.columns
+    h3
+      | {{ 'select_industry_title' | translate }}
+    .row.ng-cloak
+      .small-12.columns
+        ul.inline-list.select-industries
+          .no-content ng-show='is_empty_industries(hash.industries)'
+            | {{ 'select_industry_no_content' | translate }}
+          li ng-repeat=' industry in hash.industries '
+            .content
+              span
+                | {{ industry.name }}
+              span.revert ng-click='revert_select(industry)'
+                i.fa.fa-times
+    .row
+      .small-6.columns
+        h4
+          | {{ 'select_industry_header' | translate }}
+        ul.head.no-bullet.ng-cloak
+          li ng-repeat=' head in hash.categories '
+            a ng-click='select_head(head)' ng-class='{ cur: hash.head == head }'
+              | {{ head.k.name }}
+      .small-6.columns
+        h4
+          | {{ 'select_industry_subheader' | translate }}
+        ul.categories.no-bullet.ng-cloak
+          li ng-repeat=' industry in hash.head.v '
+            a ng-click='toggleIndustry(industry, $event)'
+              span
+                input type='checkbox' ng-checked='is_selected_industry(industry.id)' ng-click='toggleIndustry(industry, $event)'
+              span.name
+                | {{ industry.name }}
+    .row
+      .small-12.columns
+        .control-actions
+          button ng-click='submit_industry()' {{ 'confirm' | translate }}
+          a.back ng-click='cancel()' {{ 'cancel' | translate }}
+

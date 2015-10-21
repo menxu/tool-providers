@@ -1,0 +1,20 @@
+@import 'font-awesome';
+
+@import 'foundation_and_overrides';
+
+@import 'components/*';
+
+@import 'home';
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.reveal-modal {
+  max-height: 80%;
+  overflow: auto;
+}
+
+.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,41 @@
+#= require angular-file-upload-shim
+#= require angular
+#= require angular-locale_zh-cn
+#= require angular-cookie
+#= require angular-resource
+#= require angular-route
+#= require angular-sanitize
+#= require angular-file-upload
+#= require mm-foundation-tpls-0.2.0
+#= require_self
+#= require angular-translation
+#= require_tree ./angularjs
+console.log('init angularjs.js.coffee');
+
+@app = angular.module('app', ['ngSanitize', 'ngRoute', 'angularFileUpload', 'mm.foundation', 'ipCookie', 'pascalprecht.translate'])
+
+
+console.log('start angularjs.js.coffee');
+
+
+@app.config ["$httpProvider", '$routeProvider', ($httpProvider, $routeProvider) ->
+    # 配置 json 与 csrf
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
+    # 配置路由
+    $routeProvider.when '/project/basic',
+      templateUrl: '<%= asset_path("project/basic.html") %>'
+      controller: 'ProjectCreateBasicController'
+      title: '基本信息 - 创建项目'
+    .when '/project/team',
+      templateUrl: '<%= asset_path("project/team.html")%>'
+      controller: 'ProjectCreateTeamController'
+    .when '/project/require',
+      templateUrl: '<%= asset_path("project/require.html")%>'
+      controller: 'ProjectCreateRequireController'
+    .otherwise
+      redirectTo: '/project/basic'
+]
+
+
