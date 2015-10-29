@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	# render :text => 'nologin'
+    render 'nologin'
   end
 
   def welcome
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
   def search
   	@q = params[:q]
-  	# @projects = Project.search do
+  	# @tools = Tool.search do
    #    fulltext "*#{params[:q]}*"
    #    paginate page: 1, per_page: 5
    #  end.results

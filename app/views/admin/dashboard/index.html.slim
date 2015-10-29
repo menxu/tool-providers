@@ -1,0 +1,25 @@
+.row
+  .small-12.columns
+    h2.dash-title 统计数据
+    hr
+    table
+      thead
+        tr
+          th 条目
+          th 数据
+      tbody
+        tr
+          td 用户总数
+          td #{@users_count}
+        tr
+          td 工具总数
+          td #{@tool_count}
+        tr
+          td 热门工具总数
+          td #{@tool_requires_count}
+        tr
+          td 分类总数
+          td #{@tool_requires_success_count}
+        tr
+          td 项目浏览总量
+          td #{@tool_reads_count}

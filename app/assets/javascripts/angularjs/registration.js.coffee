@@ -1,8 +1,11 @@
 @app.controller 'RegistrationController', [ '$scope', '$http', '$window', 'ipCookie', ($scope, $http, $window, ipCookie)->
-  console.log('init registration.js.coffee');
+  
 
   $scope.errors = ipCookie('registerErrors') || {}
   ipCookie.remove('registerErrors', { path: '/' })
+  $scope.registration_tag = "注册账号模块"
+
+  console.log("init registration.js.coffee #{ $scope.registration_tag }");
 
   if user = ipCookie('register_users')
     $scope.name = user.name

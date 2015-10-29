@@ -1,13 +1,41 @@
+/ li
+/   = link_to t('menu.projects')
+
+/ - if current_user.present?
+/   li
+/     = link_to t('menu.activities')
+/ li
+/   = link_to t('menu.investors')
+/ li
+/   = link_to t('menu.jobs')
+
+/ li.has-form
+/   = render 'layouts/search_input'
+
+
+/ 工具Home
+/ 热点工具
+/ 工具分类
+/ 博客
+/ 酷站
+
+/ https://www.ruby-toolbox.com/blog
+/ https://ruby-china.org/topics
+/ https://css-tricks.com/
+/ http://cywin.cn/
+
 li
-  = link_to t('menu.projects')
+  = link_to t('menu.home')
 
 - if current_user.present?
   li
-    = link_to t('menu.activities')
+    = link_to t('menu.hot')
 li
-  = link_to t('menu.investors')
+  = link_to t('menu.categories')
 li
-  = link_to t('menu.jobs')
+  = link_to t('menu.blog')
+li
+  = link_to t('menu.sites')
 
 li.has-form
   = render 'layouts/search_input'

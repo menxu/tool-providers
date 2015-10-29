@@ -12,7 +12,6 @@
 #= require_tree ./angularjs
 
 @app = angular.module('app', ['ngSanitize', 'ngRoute', 'mm.foundation', 'ipCookie', 'pascalprecht.translate'])
-
 @app.config ["$httpProvider", '$routeProvider', ($httpProvider, $routeProvider) ->
     # 配置 json 与 csrf
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')

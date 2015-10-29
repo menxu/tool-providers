@@ -1,3 +1,38 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.start-page {
+  background-color: $my-body-bg;
+}
+
+.start-content { 
+  padding-top: 5.325rem;
+  padding-bottom: 5.325rem;
+  background-color: #356480;
+  background-image: image-url('banner.jpg');
+  background-size: cover;
+  color: #eee;
+
+  .heading, .sub-heading {
+    color: #eee;
+  }
+
+  .button {
+    margin-top: 1rem;
+    background-color: #eee;
+    border-color: #356480;
+    color: $primary-color;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    &:hover {
+      color: darken($primary-color, 10);
+    }
+  }
+}
+
+.start-hot-content, .start-dev-content, .start-partner-content{
+  h2 {
+    text-align: center;
+    margin: 1.4rem 0 1rem 0;
+  }
+}

@@ -1,0 +1,26 @@
+nav.top-bar(data-options="is_hover:false" data-topbar)
+  ul.title-area
+    li.name
+      h1 
+        = link_to '后台 Dashboard', admin_root_path
+    li.toggle-topbar.menu-icon
+      a href='#' Menu
+  div.top-bar-section
+    ul.left
+      li class=active_for('admin/users', params[:controller])
+        = link_to "用户管理", admin_users_path
+      li class=active_for('admin/tools', params[:controller])
+        = link_to "工具管理", admin_tools_path
+      li class=active_for('admin/tools', params[:controller])
+        = link_to "热门工具管理", admin_tools_path
+      li class=active_for('admin/categories', params[:controller])
+        = link_to "分类管理", admin_categories_path
+      li class=active_for('admin/blogs', params[:controller])
+        = link_to "博客管理", admin_blogs_path
+      li class=active_for('admin/sites', params[:controller])
+        = link_to "酷站管理", admin_sites_path 
+    ul.right
+      li
+        = link_to "返回前台", root_path
+      li
+        = link_to current_user.name + '[ 退出 ]', destroy_user_session_path, :method=>'delete'

@@ -10,7 +10,9 @@
             a.title href="#{root_path}"
               .logo-wrapper
                 .logo-wrapper-inner
-                  = image_tag 'logos/logo.svg'
+                  svg height="60" width="90"
+                    text x="10" y="25" fill="#4D8AB3" transform="rotate(-20 80,60)" TOOL
+                    text x="40" y="50" fill="#4D8AB3" transform="rotate(0 0,0)" 工具
                   - if bit_enable?
                     span.bit
                       = image_tag 'logos/neice.png'

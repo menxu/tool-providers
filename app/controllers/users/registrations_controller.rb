@@ -1,35 +1,20 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
   before_filter :configure_account_update_params, if: :devise_controller?
 
-  # GET /resource/sign_up
   def new
-    Rails.logger.info("Users::RegistrationsController#new->#{params}")
     super
   end
 
-  # POST /resource
   def create
-    # super
-    Rails.logger.info("Users::RegistrationsController#create--------->#{sign_up_params}")
-    if bit_enable?
-      if false
-        render_fail('注册失败', errors: { code: '邀请码不正确或已被使用'} )
-        return
-      end
-    end
     @user = User.new(sign_up_params)
     if @user.save
-      Rails.logger.info("====注册成功=====")
       flash[:notice] = '注册成功'
-      sign_up(:user, @user)
-      if bit_enable?
-        InviteCode.mark_used(params[:code])
-      end
+      # Rails.logger.info(@user.to_json)
+      # Rails.logger.info("sign_in=======#{sign_up(:user, @user)}")
+      # Rails.logger.info("current_user==============#{current_user}")
+      # Rails.logger.info("current_user.try(:confirmed?)==============#{current_user.try(:confirmed?)}")
       render_success
     else
-      Rails.logger.info("====注册失败=====")
       render_fail('注册失败', @user)
     end
   end

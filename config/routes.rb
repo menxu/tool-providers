@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks"}
-
+  
   root :to => "home#index"
 
   resources :home do
@@ -12,6 +12,22 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :users, only: [:show] do
+    collection do
+      post :email_validate
+    end
+  end
+
+  namespace :admin do
+    resources :users
+    resources :tools
+    resources :categories
+    resources :blogs
+    resources :sites
+    root :to => "dashboard#index"
+  end
+
+
   require 'sidekiq/web'
   authenticate :user, lambda { |u| u.has_role?(:admin) } do
     mount Sidekiq::Web => '/sidekiq'

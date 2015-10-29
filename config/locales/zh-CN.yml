@@ -3,14 +3,24 @@
   since: 来自
   cancel: 取消
   menu:
+    #old
     projects: 发现项目
     activities: 动态
     investors: 投资人
     jobs: 创业职位
+    #new
+    home: 主页
+    hot: 热门
+    categories: 分类
+    blog: 博客
+    sites: 酷站
     login: 登录
     register: 注册
     search: 搜索
   dropmenu:
+    #new
+    tool: 工具
+    #old
     project: 项目
     new_project: 创建新项目
     me: 我
@@ -22,6 +32,10 @@
     admin: 后台管理
     logout: 退出
   start-page:
+    #new
+    new_tool: 发布新工具
+    hot_tool: 热门工具
+    #old
     new_project: 发布你的项目
     hot_project: 热门项目
     all_project: 查看所有项目
