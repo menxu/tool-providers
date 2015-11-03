@@ -68,6 +68,7 @@ gem 'angular-translate-rails'
 
 # web server
 gem 'unicorn'
+gem 'passenger'
 
 # deploy
 gem 'mina', require: false
