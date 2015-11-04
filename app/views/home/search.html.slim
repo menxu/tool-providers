@@ -9,8 +9,11 @@
         | 的结果如下:
       ul
         li
-          p 项目:
-        li
-          p 投资人:
-        li
-          p 工作:
+          p 用户:
+          - if @users.blank?
+            p.no-content 没有搜索内容
+          - else
+            .row
+              .small-12.columns.users
+                = render partial: 'users/user', locals: { users: @users }
+                = link_to '搜索更多用户...', search_users_path(q: params[:q]), class: 'more'

@@ -1,0 +1,24 @@
+.search-page {
+  background-color: $my-body-bg;
+  em {
+    font-style: normal;
+    margin: 0 0.5rem;
+    color: red;
+    font-weight: 200;
+  }
+
+  .users {
+    border-top: 1px solid #fcfcfc;
+    margin-bottom: 1.5rem;
+  }
+
+  .more {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .no-content {
+    color: #999;
+  }
+  
+}
