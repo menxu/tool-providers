@@ -15,5 +15,6 @@
           - else
             .row
               .small-12.columns.users
-                = render partial: 'users/user', locals: { users: @users }
+                / = render partial: 'users/user', locals: { users: @users }
+                = render partial: 'users/user', collection: @users
                 = link_to '搜索更多用户...', search_users_path(q: params[:q]), class: 'more'

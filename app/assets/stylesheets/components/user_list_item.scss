@@ -1,0 +1,19 @@
+.user-list-item {
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #fcfcfc;
+  border-left: 1px solid #fcfcfc;
+  padding: 2rem 1rem;
+  background-color: white;
+
+  .name {
+    font-size: 1rem;
+    margin-bottom: 0.325rem;
+    a {
+      color: #666;
+      font-weight: 600;
+    }
+  }
+  .email {
+    color: #666;
+  } 
+}

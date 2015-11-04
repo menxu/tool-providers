@@ -25,5 +25,9 @@
 /config/service.yml
 
 /public/assets/*
+/solr/*
+/sunspot_solr_mmseg4j/*
+/config/tmp/*
+
 
 Gemfile.lock
