@@ -4,13 +4,6 @@ Rails.application.routes.draw do
   
   root :to => "home#index"
 
-
-  resources :users do
-    collection do
-      get :search
-    end
-  end
-
   resources :home do
     collection do
       get :index
@@ -22,6 +15,27 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       post :email_validate
+      get :search
+    end
+
+    member do
+      get :funs
+      get :tools
+      get :blogs
+    end
+  end
+
+  resources :avatars, only: [:create]
+
+  resources :messages do
+    collection do
+      get :count
+    end
+  end
+
+  resources :funs do
+    collection do
+      delete :destroy
     end
   end
 
@@ -33,7 +47,11 @@ Rails.application.routes.draw do
     resources :sites
     root :to => "dashboard#index"
   end
-
+  namespace :settings do
+    resource :profiles, only: [:show, :update]
+    resource :passwords, only: [:show, :update]
+    resource :notifications, only: [:show, :update]
+  end
 
   require 'sidekiq/web'
   authenticate :user, lambda { |u| u.has_role?(:admin) } do

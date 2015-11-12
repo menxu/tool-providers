@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(sign_up_params)
     if @user.save
       flash[:notice] = '注册成功'
+      Rails.logger.info("sign_up(:user, @user)===============#{sign_up(:user, @user)}")
       # Rails.logger.info(@user.to_json)
       # Rails.logger.info("sign_in=======#{sign_up(:user, @user)}")
       # Rails.logger.info("current_user==============#{current_user}")

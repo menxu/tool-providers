@@ -28,10 +28,10 @@ Rails.application.configure do
   config.assets.debug = true
 
   # ActionMailer::Base.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default :charset => "utf-8"
+  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => '127.0.0.1:3000' }
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   ActionMailer::Base.smtp_settings = {  
@@ -70,5 +70,5 @@ Rails.application.configure do
   Weibo2::Config.api_secret = SERVICES['weibo']['api_secret']
   Weibo2::Config.redirect_uri = SERVICES['weibo']['redirect_uri']
 
-  config.middleware.use Rack::LiveReload, host: 'localhost', port: 33333
+  # config.middleware.use Rack::LiveReload, host: 'localhost', port: 33333
 end

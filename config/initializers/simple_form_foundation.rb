@@ -128,6 +128,8 @@ SimpleForm.setup do |config|
   # CSS class for buttons
   config.button_class = 'button'
 
+  config.label_class = ''
+
   # Set this to div to make the checkbox and radio properly work
   # otherwise simple_form adds a label tag instead of a div arround
   # the nested label
@@ -137,5 +139,6 @@ SimpleForm.setup do |config|
   config.error_notification_class = 'alert-box alert'
 
   # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :vertical_form
+  config.default_wrapper = :foundation
 end
+SimpleForm.browser_validations = false

@@ -30,9 +30,79 @@
   }
 }
 
-.start-hot-content, .start-dev-content, .start-partner-content{
+.start-hots-content, .start-users-content, .start-tools-content, .start-blogs-content{
   h2 {
     text-align: center;
     margin: 1.4rem 0 1rem 0;
+    font-size: 1.2rem;
   }
+  .user img{
+    border-radius: 50%;
+  }
+
+  .head {
+    min-height: 6.5rem;
+    h5 {
+      font-size: 1.025rem;
+    }
+  }
+
+  .content {
+    text-align: center;
+    .tag {
+      color: #999;
+    }
+    .tools {
+      color: #666;
+    }
+  }
+
+  .box {
+    border: 1px solid $my-project-border-color;
+    background-color: white;
+    padding: 2rem 0;
+
+    .head {
+      padding: 0rem 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 2rem;
+
+      img {
+        border: 1px solid $my-project-border-color;
+      }
+
+      .subtitle {
+        margin: 1rem 0 0;
+        color: #999;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .content {
+      padding: 0 2rem;
+      line-height: 2rem;
+      height: 5rem;
+      .type {
+        color: #999;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .item {
+        text-align: right;
+        color: #666;
+        width: 100%;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+
 }
+

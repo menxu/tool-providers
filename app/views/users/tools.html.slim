@@ -1,0 +1,14 @@
+- content_for(:title) do
+  | 个人主页 - #{@user.name}
+
+.profile.top-blank
+  = render partial: 'head', locals: { type: :tool }
+
+  .row
+    .small-12.columns
+      - if @tools.blank?
+        p.no-content
+          | 暂无工具
+      - else
+        .timeline.simple
+          = render partial: 'timeline/event', collection: @tools

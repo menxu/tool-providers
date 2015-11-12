@@ -1,0 +1,14 @@
+- content_for(:title) do
+  | 个人主页 - #{@user.name}
+
+.profile.top-blank
+  = render partial: 'head', locals: { type: :activity }
+
+  .row
+    .small-12.columns
+      - if @recent_events.blank?
+        p.no-content
+          | 用户近七天暂无动态
+      - else
+        .timeline.simple
+          = render partial: 'timeline/event', collection: @recent_events

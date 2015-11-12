@@ -1,0 +1,12 @@
+- content_for(:title) do
+  | 个人设置
+
+.row.top-blank
+  .small-12.medium-3.columns
+    = render 'settings/sidebar'
+  .small-12.medium-9.columns
+    = simple_form_for(@user, url: settings_passwords_path, method: :PUT) do |f|
+      = f.input :current_password
+      = f.input :password
+      = f.input :password_confirmation
+      = f.button :submit, '提交', class: 'small'
