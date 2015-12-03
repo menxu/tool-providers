@@ -1,0 +1,104 @@
+data:
+  - key: AWS
+    sdesc: "AWS"
+    typcd: A 
+    fdesc: 'AWS 云服务'
+    icon: "fa-aws"
+
+  - key: Compute
+    sdesc: "云计算"
+    parent: AWS
+    typcd: B
+    fdesc: '虚拟服务器 事件驱动 负载均衡等'
+    icon: "fa-compute"
+
+  - key: 'Storage & Content Delivery'
+    sdesc: "存储和内容传输"
+    parent: AWS
+    typcd: B
+    fdesc: 'S3,CloudFront,EBS,EFS,Import/Export, Storage Gateway'
+    icon: "fa-storage-content-delivery"
+
+  - key: Developer Tools
+    sdesc: "开发人员工具"
+    parent: AWS
+    typcd: B
+    fdesc: 'CodeCommit, CodeDeploy, CodePipeline, 命令行界面'
+    icon: "fa-developer-tools"
+
+  - key: Networking
+    sdesc: "联网"
+    parent: AWS
+    typcd: B
+    fdesc: 'VPC, Direct Content, Elastic Load Balancing, Route 53'
+    icon: "fa-networking"
+
+  - key: 'Security & Identity'
+    sdesc: "安全和身份"
+    parent: AWS
+    typcd: B
+    fdesc: 'IAM, Directory Service, Inspector, CloudHSM, KMS, WAF, Trusted Advisor'
+    icon: "fa-security-identity"
+
+  - key: Database
+    sdesc: "数据库"
+    parent: AWS
+    typcd: B
+    fdesc: 'RDS, Schema Conversion Tool, DynamoDB, ElastCache, Redshift'
+    icon: "fa-database"
+
+  - key: Resources
+    sdesc: "资源"
+    parent: AWS
+    typcd: B
+    fdesc: '账单和成本管理, Marketplace, Support, 一般参考, 词汇表'
+    icon: "fa-resources"
+
+  - key: Enterprise Applications
+    sdesc: "企业应用程序"
+    parent: AWS
+    typcd: B
+    fdesc: 'WorkSpaces, WAM, WorkDocs, WorkMail'
+    icon: "fa-enterprise-applications"
+
+  - key: Internet of Things
+    sdesc: "物联网"
+    parent: AWS
+    typcd: B
+    fdesc: 'IoT'
+    icon: "fa-internet-things"
+
+  - key: Application Services
+    sdesc: "应用程序服务"
+    parent: AWS
+    typcd: B
+    fdesc: 'API Gateway, AppStream, CloudSearch, Elastic Transcoder, FPS, SES, SNS, SQS, SWF'
+    icon: "fa-application-services"
+
+  - key: Related Links
+    sdesc: "相关链接"
+    parent: AWS
+    typcd: B
+    fdesc: '白皮书, 培训, 案例研究, 关于 Kindle 的 AWS 文档, 文档存档'
+    icon: "fa-related-links"
+
+  - key: Analytics
+    sdesc: "分析"
+    parent: AWS
+    typcd: B
+    fdesc: 'EMR, Data Pipeline, Elastcsearch Service, Kinesis, Kinesis Firehose, Machine Learning, Redshift'
+    icon: "fa-analytics"
+
+  - key: Mobile Services
+    sdesc: "移动服务"
+    parent: AWS
+    typcd: B
+    fdesc: 'Mobile Hub, API Gateway, Cognito, Device Farm, Mobile Analytics, Lib'
+    icon: "fa-mobile-services"
+
+  - key: 'Additional Software & Services'
+    sdesc: "其他软件和服务"
+    parent: AWS
+    typcd: B
+    fdesc: 'Alexa Top Sites, Alexa Web Information Service, Amazon Silk, AWS GovCloud（美国）'
+    icon: "fa-additional-software-services"

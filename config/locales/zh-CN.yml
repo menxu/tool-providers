@@ -56,11 +56,11 @@
       salary: '月薪'
       title: '职位'
       option: '期权'
-  explore:
+  categories:
     index:
       find: 发现
-      no_content: 暂无编辑推荐项目
-      all_project: 查看所有项目
+      no_content: 暂无推荐内容文章
+      all_blogs: 查看所有文章
     head:
       recommend: '推荐'
       trend    : '趋势'

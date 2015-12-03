@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks"}
   
   root :to => "home#index"
@@ -12,6 +11,16 @@ Rails.application.routes.draw do
     end
   end
   
+
+  resources :categories do
+    collection do
+      get :all
+      get :trend
+    end
+  end
+  resources :blogs
+  resources :sites
+
   resources :users, only: [:show] do
     collection do
       post :email_validate

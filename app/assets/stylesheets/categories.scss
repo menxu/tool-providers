@@ -1,0 +1,39 @@
+.categories {
+  background-color: $my-body-bg;
+  padding-top: 2rem;
+
+  .categories-head {
+    background-color: $white;
+    .tabs {
+      .tab-title a {
+        color: $monsoon;
+        background-color: $white;
+      }
+      .tab-title.active a {
+        color: $primary-color;
+        background-color: $white;
+        border-bottom: 3px solid $primary-color;
+      }
+      .tab-title a:hover {
+        color: $primary-color;
+        font-weight: 500;
+        background-color: $white;
+      }
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+    }
+  }
+
+  .recommends {
+    .no-content {
+      margin-top: 1rem;
+      margin-left: 1rem;
+      color: #666;
+    }
+    .all-blogs {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+}

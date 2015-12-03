@@ -1,0 +1,17 @@
+- content_for(:titile) do
+  | #{t('.categories')}
+
+.categories
+  .row
+    .small-12.columns
+      = render partial: 'head', locals: { type: 'all' }
+      .recommends
+        - if @recommends.blank?
+          p.no-content #{t('.no_content')}
+        - else
+          ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3.blog-content
+            - @recommends.each do |recommend|
+              = render partial: 'blogs/show', locals: {blog: recommend}
+        .row
+          .small-12.columns.all-blogs
+            = link_to t('.all_blogs'), blogs_path

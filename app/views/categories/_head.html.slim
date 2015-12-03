@@ -1,0 +1,10 @@
+.categories-head
+  .row
+    .small-12.columns
+      ul.tabs
+        li.tab-title class="#{active_for(type, 'recommend')}"
+          = link_to t('.recommend'), categories_path
+        li.tab-title class="#{active_for(type, 'trend')}"
+          = link_to t('.trend'), trend_categories_path
+        li.tab-title class="#{active_for(type, 'all')}"
+          = link_to t('.all'), all_categories_path
