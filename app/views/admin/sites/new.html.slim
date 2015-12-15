@@ -1,0 +1,14 @@
+- content_for(:title) do
+  | 创建
+
+.row
+  .small-12.columns
+    h4 创建
+    = simple_form_for @site, url: admin_sites_path do |f|
+      = f.input :name, label: t('activerecord.attributes.site.name')
+      = f.input :kind, label: t('activerecord.attributes.site.kind')
+      = f.input :desc, label: t('activerecord.attributes.site.desc')
+      = f.input :icon, label: t('activerecord.attributes.site.icon')
+      = f.input :url, label: t('activerecord.attributes.site.url')
+      = f.button :submit
+    = link_to '返回', admin_sites_path

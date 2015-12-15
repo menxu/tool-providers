@@ -1,2 +1,41 @@
-h1 Admin::Blogs#index
-p Find me in app/views/admin/blogs/index.html.slim
+- content_for(:title) do
+  | 博客管理
+.row
+  .small-12.columns.top-blank
+    .new-blog
+      = link_to '创建', new_admin_blog_path
+    table
+      thead
+        tr
+          th 名称
+          th 文章分类
+          th 内容类型
+          th 描述
+          th 等级
+          th 积分
+          th 浏览次数
+          th 状态
+          th 授权
+          th 修改次数
+          th 创建时间
+          
+      tbody
+        - @blogs.each do |blog|
+          tr
+            td #{blog.name}
+            td #{blog.category.key}
+            td #{blog.kind}
+            td #{blog.desc}
+            td #{blog.level}
+            td #{blog.integrate}
+            td #{blog.visit}
+            td #{blog.status}
+            td #{blog.authorize}
+            td #{blog.updated_count}
+            td #{blog.created_at}
+            td
+              ul.inline-list
+                li
+                  = link_to '编辑', edit_admin_blog_path(blog)
+                li
+                  = link_to '删除', admin_blog_path(blog), method: :delete, data: {:confirm => "确定删除?"}

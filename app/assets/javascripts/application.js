@@ -16,6 +16,8 @@
 //= require angular-translate
 //= require angular-translate
 //= require foundation
+//= require jsapi
+//= require chartkick
 //= require_tree .
 $(function() {
   $(document).foundation();

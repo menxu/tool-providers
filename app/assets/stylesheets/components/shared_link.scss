@@ -1,0 +1,12 @@
+.shared-link{
+  list-style-type: none;
+  margin-left: 0rem;
+
+  a {
+    color: #999;
+    text-decoration: underline;
+    &:hover{
+      color: #666;
+    }
+  }
+}

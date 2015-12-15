@@ -2,24 +2,32 @@
   .small-12.columns
     h2.dash-title 统计数据
     hr
-    table
-      thead
-        tr
-          th 条目
-          th 数据
-      tbody
-        tr
-          td 用户总数
-          td #{@users_count}
-        tr
-          td 工具总数
-          td #{@tool_count}
-        tr
-          td 热门工具总数
-          td #{@tool_requires_count}
-        tr
-          td 分类总数
-          td #{@tool_requires_success_count}
-        tr
-          td 项目浏览总量
-          td #{@tool_reads_count}
+    / .small-3.columns
+    /   table
+    /     thead
+    /       tr
+    /         th 条目
+    /         th 数据
+    /     tbody
+    /       tr
+    /         td 用户总数
+    /         td #{@users_count}
+    /       tr
+    /         td 分类总数
+    /         td #{@categories_count}
+    /       tr
+    /         td 博客总数
+    /         td #{@blogs_count}
+    /       tr
+    /         td 酷站总数
+    /         td #{@sites_count}
+  .small-12.columns
+    = line_chart @graphing_line_data
+  .small-12.columns
+    = pie_chart @graphing_pie_data
+  .small-12.columns
+    = column_chart @graphing_column_data
+  .small-12.columns
+    = bar_chart @graphing_bar_data
+  .small-12.columns
+    = area_chart @graphing_area_data

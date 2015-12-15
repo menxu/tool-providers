@@ -3,7 +3,7 @@
     .small-12.medium-7.large-5.medium-centered.columns
       .row
         .small-12.columns
-          = simple_form_for(resource, as: resource_name, url: user_password_path(resource_name), html: { method: :post }, wrapper: :foundation_no_style) do |f|
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, wrapper: :foundation_no_style) do |f|
             h4.title 忘记你的密码?
             p.sub-title 找回密码
             = f.input :email, required: true, autofocus: true, placeholder: '邮箱地址'

@@ -1,0 +1,14 @@
+- content_for(:title) do
+  | 创建
+
+.row
+  .small-12.columns
+    h4 创建
+    = simple_form_for @user, url: admin_users_path do |f|
+      = f.input :email, label: t('activerecord.attributes.user.email')
+      = f.input :name, label: t('activerecord.attributes.user.name')
+      = f.input :description, label: t('activerecord.attributes.user.description')
+      = f.input :publish_email, label: t('activerecord.attributes.user.publish_email')
+      = f.input :description, label: t('activerecord.attributes.user.description')
+      = f.button :submit
+    = link_to '返回', admin_users_path

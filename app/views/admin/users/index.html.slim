@@ -1,5 +1,9 @@
-.row
+- content_for(:title) do
+  | 用户管理
+.row.admin
   .small-12.columns.top-blank
+    .new-user
+      = link_to '创建', new_admin_user_path
     table
       thead
         tr
@@ -7,7 +11,7 @@
           th 邮箱
           th 注册时间
           th 上次登录时间
-          th 是否是投资人
+          th 是否是管理员
           / th style='width: 10%' 拥有项目
           th 操作
       tbody
@@ -23,6 +27,12 @@
                 | ( uncomfirmed )
             td #{format_time(user.created_at)}
             td #{format_time(user.last_sign_in_at)}
-            td #{user.has_role?(:investor)}
+            td #{user.has_role?(:admin)}
             td
-              a href="#" 禁用
+              ul.inline-list
+                li
+                  = link_to '编辑', edit_admin_user_path(user)
+                li
+                  = link_to '删除', admin_user_path(user), method: :delete, data: {:confirm => "确定删除?"}
+                li
+                  = link_to '修改密码', change_index_admin_users_path(id: user)

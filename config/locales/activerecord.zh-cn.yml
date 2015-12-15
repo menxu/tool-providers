@@ -5,6 +5,10 @@
 
   activerecord:
     models:
+      user: 用户
+      category: 分类
+      blog: 博客
+      site: 酷站
     attributes:
       user:
         email: "登录邮箱"
@@ -27,6 +31,31 @@
         last_sign_in_ip: "上次登录IP地址"
         created_at: "创建时间"
         updated_at: "更新时间"
+      category:
+        key: "名称"
+        sdesc: "简介"
+        fdesc: "描述"
+        parent: "归类"
+        icon: "图标"
+      blog:
+        name: 名称
+        category_id: 文章分类
+        kind: 内容类型
+        desc: 描述
+        level: 等级
+        integrate: 积分
+        visit: 浏览次数
+        status: 状态
+        authorize: 授权
+        updated_count: 修改次数
+        created_at: 创建时间
+      site:
+        name: 名称
+        kind: 归档
+        desc: 描述
+        icon: 图标
+        url: 地址
+
     errors:
       template: # ~ 2.3.5 backward compatible
         header:

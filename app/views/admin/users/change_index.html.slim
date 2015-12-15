@@ -1,0 +1,17 @@
+.row
+  .small-12.columns
+    = simple_form_for(@user, url: change_pwd_admin_users_path, method: :post ) do |f|
+      = hidden_field_tag :id, @user.id
+      = f.input :password, label: t('activerecord.attributes.user.password')
+      = f.input :password_confirmation, label: t('activerecord.attributes.user.password_confirmation')
+      = f.button :submit
+/ .row
+/   .small-12.columns
+/     = form_tag change_pwd_admin_users_path(@user.id) do
+/       label #{t('activerecord.attributes.user.current_password')}
+/       = password_field_tag :oldpwd
+/       label #{t('activerecord.attributes.user.password')}
+/       = password_field_tag :passwdnew
+/       label #{t('activerecord.attributes.user.password_confirmation')}
+/       = password_field_tag :passwdnew2
+/       = submit_tag '提交', :class => 'button'

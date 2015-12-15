@@ -1,0 +1,40 @@
+.user-new{
+  background-color: $my-body-bg;
+
+  .title{
+    color: #555;
+    @media #{$medium-up} {
+      text-align: left;
+    }
+  }
+
+  .sub-title{
+    color: #999;
+    @media #{$medium-up} {
+      text-align: left;
+    }    
+  }
+}
+
+.login-link{
+
+}
+.blank-link{
+  color: #ddd;
+  &:hover {
+    color: #aaa;
+  }
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  a {
+    color: #999;
+    text-decoration: underline;
+    &:hover {
+      color: #666;
+    }
+  }
+}

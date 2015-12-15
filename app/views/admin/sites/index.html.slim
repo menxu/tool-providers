@@ -1,2 +1,31 @@
-h1 Admin::Sites#index
-p Find me in app/views/admin/sites/index.html.slim
+- content_for(:title) do
+  | 酷站管理
+
+.row
+  .small-12.columns.top-blank
+    .new-site
+      = link_to '创建', new_admin_site_path
+    table
+      thead
+        tr
+          th 名称
+          th 归档
+          th 描述
+          th 图标
+          th 地址
+          th 编辑
+      tbody
+        - @sites.each do |site|
+          tr
+            td #{site.name}
+            td #{site.kind}
+            td #{site.desc}
+            td #{site.icon}
+            td
+              =h link_to site.url, site.url, target: :_blank
+            td
+              ul.inline-list
+                li
+                  = link_to '编辑', edit_admin_site_path(site)
+                li
+                  = link_to '删除', admin_site_path(site), method: :delete, data: {:confirm => "确定删除?"}

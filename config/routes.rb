@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sites/index'
+
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks"}
   
   root :to => "home#index"
@@ -49,7 +51,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
+    resources :users do
+      collection do
+        get  :change_index
+        post :change_pwd
+      end
+    end
     resources :tools
     resources :categories
     resources :blogs

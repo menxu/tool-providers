@@ -20,6 +20,9 @@ gem 'foundation-icons-sass-rails'
 gem "font-awesome-rails"
 gem 'underscore-rails'
 gem 'angularjs-rails'
+gem "chartkick"
+# gem "groupdate"
+gem "dateslices"
 #like will_paginate
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'jbuilder', '~> 2.0'

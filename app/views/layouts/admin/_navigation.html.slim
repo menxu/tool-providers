@@ -9,10 +9,6 @@ nav.top-bar(data-options="is_hover:false" data-topbar)
     ul.left
       li class=active_for('admin/users', params[:controller])
         = link_to "用户管理", admin_users_path
-      li class=active_for('admin/tools', params[:controller])
-        = link_to "工具管理", admin_tools_path
-      li class=active_for('admin/tools', params[:controller])
-        = link_to "热门工具管理", admin_tools_path
       li class=active_for('admin/categories', params[:controller])
         = link_to "分类管理", admin_categories_path
       li class=active_for('admin/blogs', params[:controller])

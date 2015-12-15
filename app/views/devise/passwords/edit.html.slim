@@ -1,0 +1,11 @@
+.user-new.top-blank
+  .row
+    .small-12.medium-7.large-5.medium-centered.columns
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+        = f.error_notification
+        = f.input :reset_password_token, as: :hidden
+        = f.full_error :reset_password_token
+        = f.input :password, label: "新密码", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+        = f.input :password_confirmation, label: "确定密码", required: true
+        = f.button :submit, "提交"
+      = render "devise/shared/links"

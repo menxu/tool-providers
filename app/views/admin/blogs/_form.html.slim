@@ -1,0 +1,14 @@
+= simple_form_for @blog, url: admin_blog_path(@blog) do |f|
+  = f.input :name, label: t('activerecord.attributes.blog.name')
+  = f.input :category_id, label: t('activerecord.attributes.blog.category_id'), collection: Category.all, label_method: :key, value_method: :id, include_blank: false
+  = f.input :kind, label: t('activerecord.attributes.blog.kind')
+  = f.input :desc, label: t('activerecord.attributes.blog.desc')
+  = f.input :level, label: t('activerecord.attributes.blog.level')
+  = f.input :integrate, label: t('activerecord.attributes.blog.integrate')
+  = f.input :visit, label: t('activerecord.attributes.blog.visit')
+  = f.input :status, label: t('activerecord.attributes.blog.status')
+  = f.input :authorize, label: t('activerecord.attributes.blog.authorize')
+  = f.input :updated_count, label: t('activerecord.attributes.blog.updated_count')
+  = f.button :submit
+
+= link_to '返回', admin_blogs_path

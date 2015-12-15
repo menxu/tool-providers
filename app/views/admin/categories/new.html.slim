@@ -1,0 +1,14 @@
+- content_for(:title) do
+  | 创建
+
+.row
+  .small-12.columns
+    h4 创建
+    = simple_form_for @category, url: admin_categories_path do |f|
+      = f.input :key, label: t('activerecord.attributes.category.key')
+      = f.input :sdesc, label: t('activerecord.attributes.category.sdesc')
+      = f.input :fdesc, label: t('activerecord.attributes.category.fdesc')
+      = f.input :parent, label: t('activerecord.attributes.category.parent')
+      = f.input :icon, label: t('activerecord.attributes.category.icon')
+      = f.button :submit
+    = link_to '返回', admin_categories_path
