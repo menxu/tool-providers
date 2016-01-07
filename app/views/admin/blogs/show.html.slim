@@ -1,0 +1,9 @@
+- content_for(:title) do
+  | 显示
+
+.row
+  .small-12.columns
+    h4 #{@blog.name}
+    .desc #{@blog.desc}
+    hr
+    .content #{markdown(@blog.content)}

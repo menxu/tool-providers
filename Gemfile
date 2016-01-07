@@ -20,6 +20,7 @@ gem 'foundation-icons-sass-rails'
 gem "font-awesome-rails"
 gem 'underscore-rails'
 gem 'angularjs-rails'
+#graping
 gem "chartkick"
 # gem "groupdate"
 gem "dateslices"
@@ -38,6 +39,10 @@ gem 'rolify'
 gem 'figaro'
 gem 'settingslogic'
 
+# markdown 解析器
+gem 'redcarpet'
+# 代码高亮
+gem 'coderay'
 
 #search
 gem 'progress_bar'

@@ -25,7 +25,7 @@
 / http://cywin.cn/
 
 li class="#{active_for(controller_name, :home)}"
-  = link_to t('menu.home')
+  = link_to t('menu.home'), root_path
 
 / - if current_user.present?
 /   li class="#{active_for(controller_name, 'recommend')}"

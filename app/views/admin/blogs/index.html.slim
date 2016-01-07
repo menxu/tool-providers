@@ -22,7 +22,8 @@
       tbody
         - @blogs.each do |blog|
           tr
-            td #{blog.name}
+            td 
+              = link_to blog.name, admin_blog_path(blog)
             td #{blog.category.key}
             td #{blog.kind}
             td #{blog.desc}
