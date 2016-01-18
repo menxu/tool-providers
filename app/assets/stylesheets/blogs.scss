@@ -1,0 +1,19 @@
+.blogs {
+  background-color: $my-body-bg;
+
+  .head {
+    background-color: #356480;
+    background-image: image-url('banner.jpg');
+    padding-bottom: 3rem;
+    color: #eee;
+    h2 {
+      color: #eee;
+
+      a {
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        color: #eee;
+      }
+    }
+  }
+}
