@@ -1,0 +1,10 @@
+.row.blog
+  div
+    div.desc
+      h3
+        span 
+          = link_to blog.name, blog_path(blog)
+        span.line 
+      div #{blog.desc}
+      div.right
+        span #{format_time(blog.created_at)}

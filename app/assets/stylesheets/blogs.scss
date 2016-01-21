@@ -16,4 +16,51 @@
       }
     }
   }
+
+  .no-content {
+    padding-left: 2rem;
+    color: #666;
+  }
+  .blog-wrapper {
+    margin-bottom: 2rem;
+  }
+  .pagination {
+    margin-top: 2rem;
+  }
+  .blog {
+    background-color: $white;
+    padding: 1rem 1rem;
+    margin: 0;
+    border: 1px solid $my-project-border-color;
+
+    img {
+      border-radius: 50%;
+      @media #{$small-up} {
+        width: 85%;
+      }
+    }
+
+    .right {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+    }
+  }
+
+
+  .search-form {
+    margin-top: 2rem;
+    background-color: $white;
+    padding: 2rem 2rem 1rem 2rem;
+    margin-bottom: 2rem;
+    @media #{$small-only} {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .sub-nav {
+      @media #{$small-only} {
+        display: none;
+      }
+    }
+  }
 }
+

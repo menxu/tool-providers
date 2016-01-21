@@ -18,6 +18,10 @@
     setting: 设置
     admin: 后台管理
     logout: 退出
+  start-page:
+    new_tool: 发布新工具
+    hot_tool: 热门工具
+    hot_user: 活跃用户
 
   categories:
     index:
@@ -29,8 +33,11 @@
       trend    : 趋势
       all      : 所有
   blogs:
+    type: '分类:'
+    search_placeholder: '输入类别, 如: HTML5'
     index:
       title: 博客
+      no_content: 没有对应内容
       head:
         title: 发表博客
         apply: 新建
@@ -38,6 +45,10 @@
   sites:
     index:
       title: 酷站
+      head:
+        title: 添加酷站
+        apply: 新建
+        description: 大家一起分享，一起成长
   errors:
     messages:
       #carrierwave 翻译信息

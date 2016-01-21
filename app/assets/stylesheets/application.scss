@@ -18,6 +18,10 @@
 
 @import 'blogs';
 
+@import 'blog-show';
+
+@import 'sites';
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
@@ -29,4 +33,22 @@
 
 .modal-open {
   overflow: hidden;
+}
+
+.box {
+  background-color: #fff;
+  padding:10px;
+  margin: 0 0 20px 0; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 0px 2px rgba(0,0,0,.1);
+  box-shadow: 0 0px 2px rgba(0,0,0,.05);
+  h2.title {
+    font-size: 12px;
+    margin:0 -10px; padding:0 10px; margin-bottom:8px;
+    color:#999; line-height:100%;
+    border-bottom:1px solid #ddd; padding-bottom:8px;
+  }
 }

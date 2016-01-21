@@ -1,0 +1,13 @@
+- content_for(:title) do
+  | 显示
+
+.row.blog-show
+  .small-12.columns
+    .head
+      h4 #{@blog.name}
+      .desc #{@blog.desc}
+      .right
+        span #{format_time(@blog.created_at)}
+    hr
+    .body
+      .content #{markdown(@blog.content)}

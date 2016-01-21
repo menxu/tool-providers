@@ -20,7 +20,12 @@ Rails.application.routes.draw do
       get :trend
     end
   end
-  resources :blogs
+  resources :blogs do
+    collection do
+      get :search
+    end
+  end
+
   resources :sites
 
   resources :users, only: [:show] do
