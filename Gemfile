@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'slim-rails'
-gem "foundation-rails", ">= 5.0"
+gem "foundation-rails", "5.5.3.2"
 gem 'foundation-icons-sass-rails'
 gem "font-awesome-rails"
 gem 'underscore-rails'

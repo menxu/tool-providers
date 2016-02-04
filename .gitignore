@@ -24,7 +24,7 @@
 /config/database.yml
 /config/application.yml
 /config/service.yml
-
+/public/uploads
 /public/assets/*
 /solr/*
 /sunspot_solr_mmseg4j/*
