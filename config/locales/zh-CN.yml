@@ -13,15 +13,17 @@
     search: 搜索
   dropmenu:
     tool: 工具
+    create_blog: 写新文章
     me: 我
     home: 我的主页
     setting: 设置
     admin: 后台管理
     logout: 退出
   start-page:
-    new_tool: 发布新工具
+    new_tool: 写新文章
     hot_tool: 热门工具
     hot_user: 活跃用户
+    hot_blog: 精华文章
 
   categories:
     index:

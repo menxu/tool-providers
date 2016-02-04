@@ -2,13 +2,15 @@
   | 创建
 
 .row
-  .small-12.columns
+  .small-12.columns ng-controller="CategoryPhotoController"
     h4 创建
     = simple_form_for @category, url: admin_categories_path do |f|
       = f.input :key, label: t('activerecord.attributes.category.key')
       = f.input :sdesc, label: t('activerecord.attributes.category.sdesc')
       = f.input :fdesc, label: t('activerecord.attributes.category.fdesc')
-      = f.input :parent, label: t('activerecord.attributes.category.parent')
-      = f.input :icon, label: t('activerecord.attributes.category.icon')
+      = f.input :parent, label: t('activerecord.attributes.category.parent') do
+        = f.select :parent, ["所有"] + @categories.map{|c| [c.key, c.id, {name: c.key}]}
+      = f.input :icon, label: t('activerecord.attributes.category.icon') do
+        = f.file_field :icon
       = f.button :submit
     = link_to '返回', admin_categories_path

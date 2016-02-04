@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   end
 
   resources :avatars, only: [:create]
+  resources :photos, only: [:create]
 
   resources :messages do
     collection do

@@ -1,4 +1,4 @@
 class Avatar < ActiveRecord::Base
-  belongs_to :user
+  has_one :photo
   mount_uploader :image, AvatarUploader
 end

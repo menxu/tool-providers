@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
     @users = User.default_order.limit(3)
+    @blogs = Blog.all
     # @users = []
     @tools = []
-    @blogs = []
     @sites = []
     render 'nologin'
   end

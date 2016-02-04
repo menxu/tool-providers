@@ -19,6 +19,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create

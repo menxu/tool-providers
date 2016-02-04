@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
+
   def index
     @blogs = Blog.all
     @categories = Category.all.map(&:key)
@@ -24,5 +26,28 @@ class BlogsController < ApplicationController
     Rails.logger.info @category.to_json
     Rails.logger.info "======="
     render :index
+  end
+
+  def new
+    @blog = Blog.new
+  end
+
+  def create
+    blog_params = params[:blog]
+    blog_params[:user_id] = current_user.id
+    Rails.logger.info blog_params
+    @blog = Blog.new(check_params)
+
+    if @blog.save
+      render_success('创建成功', {id: @blog.id})
+    else
+      render_fail('创建失败')
+    end
+    
+  end
+
+  private
+  def check_params
+    params[:blog].permit!
   end
 end

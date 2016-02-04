@@ -1,5 +1,11 @@
 class Site < ActiveRecord::Base
-  KindCn = ["前端社区","编程社区","开源项目", "技术博客", "其他"]
+  KindCn = {
+    0 => "前端社区",
+    1 => "编程社区",
+    2 => "开源项目",
+    3 => "技术博客",
+    4 => "其他",
+  }
 
   def kind_cn
     KindCn[self.kind].to_s

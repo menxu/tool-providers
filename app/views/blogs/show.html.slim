@@ -7,7 +7,10 @@
       h4 #{@blog.name}
       .desc #{@blog.desc}
       .right
-        span #{format_time(@blog.created_at)}
+        span 
+        |
+        = link_to @blog.user.name, @blog.user
+        span  * #{format_time(@blog.created_at)}
     hr
     .body
       .content #{markdown(@blog.content)}

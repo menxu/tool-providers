@@ -15,10 +15,12 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   has_one :avatar
 
+  has_many :blogs
   has_many :funs
   has_many :messages
 
   scope :default_order, -> { order(created_at: :desc) }
+
 
   def mark_all_as_read
     self.messages.unread.update_all(is_read: true, read_at: DateTime.now)
