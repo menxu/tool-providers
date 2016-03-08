@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(sign_up_params)
+
     if @user.save
       flash[:notice] = '注册成功'
       Rails.logger.info("sign_up(:user, @user)===============#{sign_up(:user, @user)}")
@@ -48,7 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
+    # devise_parameter_sanitizer.for(:sign_up) << :attribute
   # end
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -1,4 +1,8 @@
-class Message < ActiveRecord::Base
+class Message
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include Sunspot::Mongo
+
   paginates_per 10
 
   mi_const_set('ACTIONS',

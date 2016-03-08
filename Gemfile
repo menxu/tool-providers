@@ -23,7 +23,7 @@ gem 'angularjs-rails'
 #graping
 gem "chartkick"
 # gem "groupdate"
-gem "dateslices"
+# gem "dateslices" #ActiveRecord
 #like will_paginate
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'jbuilder', '~> 2.0'
@@ -67,6 +67,7 @@ gem 'oauth_china'
 # for upload picture
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'carrierwave-mongoid'
 
 # i18n
 gem 'rails-i18n', '~> 4.0.0'
@@ -117,3 +118,12 @@ group :test do
   gem 'rspec-sidekiq'
 end
 
+## mongod
+gem 'mongoid', '~> 4.0'
+gem 'mongo_mapper'
+gem 'sunspot_mongo'
+gem 'bson'
+gem 'bson_ext'
+# gem 'mongoid_auto_increment_id' #生成自增的整数形id
+# gem 'mongoid-rails' #防止query的注入
+gem 'mongoid_rails_migrations' #对mongodb的数据迁移功能
