@@ -121,8 +121,6 @@ end
 ## mongod
 gem 'mongoid', '~> 4.0'
 gem 'mongo_mapper'
-gem 'sunspot_mongo'
-gem 'bson'
 gem 'bson_ext'
 # gem 'mongoid_auto_increment_id' #生成自增的整数形id
 # gem 'mongoid-rails' #防止query的注入

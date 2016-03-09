@@ -2,7 +2,6 @@ class Blog
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
-  include Sunspot::Mongo
 
   field :name, type: String
   field :kind, type: Integer, default: 0

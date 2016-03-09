@@ -1,7 +1,6 @@
 class Authentication
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Sunspot::Mongo
 
   field :provider, type: String
   field :uid, type: String

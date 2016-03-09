@@ -2,7 +2,6 @@ class Site
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
-  include Sunspot::Mongo
 
   
   field :name, type: String

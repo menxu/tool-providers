@@ -2,7 +2,6 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
-  include Sunspot::Mongo
 
   field :email, type: String, default: ''
   field :name, type: String
@@ -26,7 +25,7 @@ class User
   field :confirmation_sent_at, type: Time
   field :unconfirmed_email, type: String
 
-  field :publish_email, type: Boolean, default: false
+  field :publish_email, type: Mongoid::Boolean, default: false
   field :description, type: String
 
   #Lockable

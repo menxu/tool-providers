@@ -1,7 +1,6 @@
 class Fun
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Sunspot::Mongo
 
   paginates_per 48
   belongs_to :user

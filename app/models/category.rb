@@ -2,7 +2,6 @@ class Category
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::BaseModel
-  include Sunspot::Mongo
 
   field :key, type: String
   field :sdesc, type: String
