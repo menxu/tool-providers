@@ -3,11 +3,8 @@
     li
       ul.project
         h6.title #{t('dropmenu.tool')}
-        / - current_user.tools.each do |project|
-        /   li
-        /     = link_to project.name, edit_project_path(project)
-        / li
-        /   = link_to t('dropmenu.new_project'), new_project_path + "#/project/basic"
+        li
+          = link_to t('dropmenu.create_blog'), new_blog_path
     li
       ul.about-me
         h6.title #{t('dropmenu.me')}

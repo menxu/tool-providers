@@ -1,0 +1,24 @@
+- content_for(:title) do
+  | 新建
+
+.row.blog-edit ng-controller="BlogEditController"
+  .row.content
+    .small-12.columns
+      form ng-submit="update_blog()"
+        .row.title
+          .row
+            .small-12.medium-6.columns
+              select id="categroy_id" ng-model="blog.category_id"
+                - Category.all.each do |category|
+                  option value="#{category.id}" #{category.key}
+              input id='name' type='text' placeholder='文章主题' ng-model="blog.name" ng-class= '{ error: blog.errors.name }'
+        .row.body
+          textarea ng-model="blog.content"  placeholder="文章内容，markdown格式"
+        .row.submit
+          .row
+            .small-12.medium-6.columns
+              select id="status" ng-model="blog.status"
+                - Blog::StatusCn.each do |k,v|  #.map{|k,v| [v,k]}
+                  option value="#{k}" #{v}
+            input ng-model="blog.user_id"  value="#{current_user.id}" type="hidden"
+            input.button type="submit"

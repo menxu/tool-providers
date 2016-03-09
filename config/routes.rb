@@ -19,7 +19,12 @@ Rails.application.routes.draw do
       get :trend
     end
   end
-  resources :blogs
+  resources :blogs do
+    collection do
+      get :search
+    end
+  end
+
   resources :sites
 
   resources :users, only: [:show] do
@@ -36,6 +41,7 @@ Rails.application.routes.draw do
   end
 
   resources :avatars, only: [:create]
+  resources :photos, only: [:create]
 
   resources :messages do
     collection do

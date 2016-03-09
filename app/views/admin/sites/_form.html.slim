@@ -1,6 +1,7 @@
 = simple_form_for @site, url: admin_site_path(@site) do |f|
   = f.input :name, label: t('activerecord.attributes.site.name')
-  = f.input :kind, label: t('activerecord.attributes.site.kind')
+  = f.input :kind, label: t('activerecord.attributes.site.kind') do
+    = f.select :kind, Site::KindCn.map{|k,v| [v,k]}
   = f.input :desc, label: t('activerecord.attributes.site.desc')
   = f.input :icon, label: t('activerecord.attributes.site.icon')
   = f.input :url, label: t('activerecord.attributes.site.url')

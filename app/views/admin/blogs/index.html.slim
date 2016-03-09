@@ -11,29 +11,30 @@
           th 文章分类
           th 内容类型
           th 描述
-          th 等级
-          th 积分
-          th 浏览次数
+          / th 等级
+          / th 积分
+          / th 浏览次数
           th 状态
-          th 授权
-          th 修改次数
+          / th 授权
+          / th 修改次数
           th 创建时间
+          th 操作
           
       tbody
         - @blogs.each do |blog|
           tr
             td 
               = link_to blog.name, admin_blog_path(blog)
-            td #{blog.category.key}
-            td #{blog.kind}
+            td #{blog.category.try(:key)}
+            td #{blog.kind_cn}
             td #{blog.desc}
-            td #{blog.level}
-            td #{blog.integrate}
-            td #{blog.visit}
-            td #{blog.status}
-            td #{blog.authorize}
-            td #{blog.updated_count}
-            td #{blog.created_at}
+            / td #{blog.level}
+            / td #{blog.integrate}
+            / td #{blog.visit}
+            td #{blog.status_cn}
+            / td #{blog.authorize}
+            / td #{blog.updated_count}
+            td #{format_time(blog.created_at)}
             td
               ul.inline-list
                 li

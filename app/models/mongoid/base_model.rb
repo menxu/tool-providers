@@ -9,6 +9,9 @@ module Mongoid
 			scope :by_week, where(:created_at.ate => 7.days.ago.utc)
 		end
 
+		module InstanceMethods
+		end
+
 		module ClassMethods
 			def find_by_id(id)
 				if id.is_a?(Integer) or id.is_a?(String)

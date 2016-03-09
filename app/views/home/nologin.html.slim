@@ -6,13 +6,38 @@
           .smalll-12.large-8.columns
             h2.heading #{ Setting.heading }
             h4.sub-heading #{ Setting.sub_heading }
-            = link_to t('start-page.new_tool'), '#', class: 'button'
+            = link_to t('start-page.new_tool'), new_blog_path, class: 'button'
   .start-hots-content
     .row
       .small-12.columns
-        h2 #{t('start-page.hot_tool')}
-        ul.small-block-grid-1.medium-block-guid-2.large-block-grid-3
+        h2 #{t('start-page.hot_blog')}
+        ul.small-block-grid-1.medium-block-guid-1.large-block-grid-1
+          - if @blogs.blank?
+            p.no-content #{t('.no_content')}
+          - else
+            .box
+              - @blogs.each do |blog|
+                li
+                  .blog
+                    .row
+                      .user.small-1.columns
+                        = link_to blog.user do
+                          - image_tag blog.user.avatar_url
+                      .content.small-11.columns
+                        = link_to blog.name, blog
+                        div.subtitle #{blog.desc}
+                        span.category
+                          |
+                          = link_to blog.category.key, search_blogs_path({blog_type: blog.category.key})
+                        span.uname 
+                          |
+                          = link_to blog.user.name, blog.user
+                        span.time * #{format_time(blog.updated_at)}
 
+  hr
+  .start-users-content
+    .row
+      .small-12.columns
         h2 #{t('start-page.hot_user')}
         ul.small-block-grid-1.medium-block-guid-2.large-block-grid-3
           - 3.times do |i|

@@ -30,7 +30,40 @@
   }
 }
 
-.start-hots-content, .start-users-content, .start-tools-content, .start-blogs-content{
+.start-hots-content {
+  h2 {
+    text-align: center;
+    margin: 1.4rem 0 1rem 0;
+    font-size: 1.2rem;
+  }
+  .box {
+    border: 1px solid $my-project-border-color;
+    background-color: white;
+    padding: 1rem 0;
+    list-style-type: none;
+    .blog {
+      padding: 1rem 1rem;
+      border-bottom: 1px dashed #ddd;
+      .content {
+        .subtitle{
+          color: #555;
+          white-space: nowrap;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        span{
+          color: #999;
+          margin-right: 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
+  }
+}
+
+.start-users-content, .start-tools-content, .start-blogs-content{
   h2 {
     text-align: center;
     margin: 1.4rem 0 1rem 0;

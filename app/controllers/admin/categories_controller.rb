@@ -5,6 +5,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def edit
     @category = Category.find params[:id]
+    @categories = Category.all
   end
 
   def update
@@ -19,6 +20,7 @@ class Admin::CategoriesController < Admin::ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create

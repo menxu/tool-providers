@@ -14,4 +14,5 @@ class Category
   field :icon, type: String
 
   has_many :blogs
+  mount_uploader :icon, PhotoUploader
 end

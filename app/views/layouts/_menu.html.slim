@@ -30,8 +30,8 @@ li class="#{active_for(controller_name, :home)}"
 / - if current_user.present?
 /   li class="#{active_for(controller_name, 'recommend')}"
 /     = link_to t('menu.hot')
-li class="#{active_for(controller_name, :categories)}"
-  = link_to t('menu.categories'), categories_path
+/ li class="#{active_for(controller_name, :categories)}"
+/   = link_to t('menu.categories'), categories_path
 li class="#{active_for(controller_name, :blogs)}"
   = link_to t('menu.blog'), blogs_path
 li class="#{active_for(controller_name, :sites)}"

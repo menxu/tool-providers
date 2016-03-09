@@ -1,2 +1,22 @@
-h1 Sites#index
-p Find me in app/views/sites/index.html.slim
+- content_for(:title) do
+  | #{t('.title')}
+
+.sites
+  .head.top-blank
+    .row
+      .small-12.columns
+        h2
+          | #{t('.head.title')}
+          - if current_user && current_user.has_role?(:admin)
+            = link_to t('.head.apply'), sites_path
+        p #{t('.head.description')}
+  .row
+    .small-12.columns
+      .body
+        - @kind_sites.each do |kind ,sites|
+            .box
+              h2 #{Site.kind_cn(kind)}
+              .row
+                - sites.each do |site|
+                  span3.site
+                    = link_to site.name, site.url,:target => "_blank", :rel => "nofollow", :titile => site.desc

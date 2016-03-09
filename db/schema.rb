@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214074515) do
+ActiveRecord::Schema.define(version: 20160131130006) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",      null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151214074515) do
     t.integer  "updated_count"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
   end
 
   add_index "blogs", ["category_id"], name: "index_blogs_on_category_id"
@@ -77,6 +78,13 @@ ActiveRecord::Schema.define(version: 20151214074515) do
     t.string   "status"
     t.string   "target_type"
     t.datetime "read_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
