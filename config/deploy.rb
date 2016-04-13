@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+# lock '3.4.0'
 
 set :application, 'tool-providers'
 set :repo_url, 'git@github.com:menxu/tool-providers.git'
@@ -7,19 +7,19 @@ set :repo_url, 'git@github.com:menxu/tool-providers.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-set :deploy_user, 'ubuntu'
+# set :deploy_user, 'ubuntu'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/srv/rorapps/tool-providers'
 
 # Default value for :scm is :git
-set :scm, :git
+# set :scm, :git
 
 # Default value for :format is :pretty
-set :format, :pretty
+# set :format, :pretty
 
 # Default value for :log_level is :debug
-set :log_level, :debug
+# set :log_level, :debug
 
 # Default value for :pty is false
 set :pty, true
