@@ -31,4 +31,4 @@
 /config/tmp/*
 
 
-Gemfile.lock
+#Gemfile.lock
