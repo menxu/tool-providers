@@ -11,10 +11,20 @@
         li
           p 用户:
           - if @users.blank?
-            p.no-content 没有搜索内容
+            p.no-content 没有搜索到用户
           - else
             .row
               .small-12.columns.users
                 / = render partial: 'users/user', locals: { users: @users }
                 = render partial: 'users/user', collection: @users
                 = link_to '搜索更多用户...', search_users_path(q: params[:q]), class: 'more'
+        li
+          p 博客:
+          - if @users.blank?
+            p.no-content 没有搜索到博客内容
+          - else
+            .row
+              .small-12.columns.blogs
+                / = render partial: 'blogs/blog', locals: { users: @blogs }
+                = render partial: 'users/user', collection: @blogs
+                = link_to '搜索更多博客...', search_blogs_path(q: params[:q]), class: 'more'
