@@ -46,8 +46,8 @@ gem 'coderay'
 
 #search
 gem 'progress_bar'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'sunspot_rails', '2.2.3'
+gem 'sunspot_solr', '2.2.3'
 
 #background cron
 gem 'sidekiq'
