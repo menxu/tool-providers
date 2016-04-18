@@ -9,7 +9,7 @@ unzip mmseg4j-1.8.5.zip -d mmseg4j
 cp -rf sunspot/sunspot_solr/solr ../sunspot_solr_mmseg4j
 mkdir -p WEB-INF/lib
 cp mmseg4j/dist/*-1.8.5.jar WEB-INF/lib
-cp mmseg4j/data/ ../sunspot_solr_mmseg4j/solr/mmseg4j_dict/ -r
+cp mmseg4j/data/ /srv/sunspot/sunspot_solr_mmseg4j/solr/mmseg4j_dict/ -r
 sed 's,class="solr.StandardTokenizerFactory",class="com.chenlb.mmseg4j.solr.MMSegTokenizerFactory" mode="max-word" dicPath="mmseg4j_dict",g' -i ../sunspot_solr_mmseg4j/solr/conf/schema.xml
 zip -u ../sunspot_solr_mmseg4j/webapps/solr.war WEB-INF/lib/*.jar
 cd ..
