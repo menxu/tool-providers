@@ -12,15 +12,15 @@ class HomeController < ApplicationController
   end
 
   def search
-  	@q = params[:q]
+    @q = params[:q]
     @users = User.search do
-      fulltext "*#{params[:q]}*"
+      fulltext "*#{params[:q].downcase}*"
       paginate page:1, per_page: 5
     end.results
 
     @blogs = Blog.search do
-      fulltext "*#{params[:q]}*"
+      fulltext "*#{params[:q].downcase}*"
       paginate page:1, per_page: 5
-    end
+    end.results
   end
 end
