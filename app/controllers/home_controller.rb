@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @blogs = Blog.all
     # @users = []
     @tools = []
-    @sites = []
+    @sites = Site.all
     render 'nologin'
   end
 
@@ -12,9 +12,14 @@ class HomeController < ApplicationController
   end
 
   def search
-  	@q = params[:q]
+    @q = params[:q]
     @users = User.search do
-      fulltext "*#{params[:q]}*"
+      fulltext "*#{params[:q].downcase}*"
+      paginate page:1, per_page: 5
+    end.results
+
+    @blogs = Blog.search do
+      fulltext "*#{params[:q].downcase}*"
       paginate page:1, per_page: 5
     end.results
   end

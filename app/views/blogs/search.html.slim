@@ -1,0 +1,19 @@
+- content_for(:title) do
+  | #{@q} - 搜索
+.search-page.top-blank
+  .row
+    .small-12.medium-10.medium-centered.columns
+      p 
+        | 搜索
+        em #{@q}
+        | 的结果如下:
+      ul
+        li
+          p 博客:
+          - if @blogs.blank?
+            p.no-content 没有搜索到博客内容
+          - else
+            .row
+              .small-12.columns.blogs
+                / = render partial: 'blogs/blog', locals: { blogs: @blogs }
+                = render partial: 'blogs/blog', collection: @blogs
