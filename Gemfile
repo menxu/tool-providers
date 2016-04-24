@@ -82,6 +82,9 @@ gem 'passenger'
 gem 'mina', require: false
 gem 'mina-sidekiq', require: false
 
+# api
+gem 'grape'
+
 # Log Analysis
 # https://ruby-china.org/topics/2990 使用 Spork + Guard + RSpec + Capybara
 # https://ruby-china.org/topics/14039 delay server

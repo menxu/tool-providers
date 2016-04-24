@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'sites/index'
+  require_dependency 'app/api/api' if Rails.env.development?
+  mount API => '/'
 
   devise_for :users, :controllers => {:sessions => "users/sessions", :registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks"}
   
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  
 
   resources :categories do
     collection do

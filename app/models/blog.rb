@@ -36,4 +36,8 @@ class Blog < ActiveRecord::Base
   def self.status_cn(status)
     StatusCn[status].to_s
   end
+
+  def api_json
+    self.to_json
+  end
 end
